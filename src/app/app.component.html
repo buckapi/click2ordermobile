@@ -1,0 +1,83 @@
+<div class="offcanvas sidebar-offcanvas offcanvas-start" tabindex="-1" id="offcanvasLeft">
+  <div class="offcanvas-header">
+    <img class="img-fluid profile-pic" src="assets/fuzzy/images/icons/profile.png" alt="profile" />
+    <h4>Hello, Agasya!</h4>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="sidebar-content">
+      <ul class="link-section">
+        <!-- <li>
+          <div class="pages">
+            <h4>RTL</h4>
+            <div class="switch-btn">
+              <input id="dir-switch" type="checkbox" />
+            </div>
+          </div>
+        </li> -->
+        <li>
+          <div class="pages">
+            <h4>Modo oscuro</h4>
+            <div class="switch-btn">
+              <input id="dark-switch" type="checkbox" />
+            </div>
+          </div>
+        </li>
+        <li>
+          <a routerLink="c2oOrders" class="pages">
+            <h4>Historial de Ordenes</h4>
+            <i class="ri-arrow-drop-right-line"></i>
+          </a>
+        </li>
+        <!-- <li>
+          <a href="page-listing.html" class="pages">
+            <h4>Pages List</h4>
+            <i class="ri-arrow-drop-right-line"></i>
+          </a>
+        </li> -->
+
+        <!-- <li>
+          <a href="setting.html" class="pages">
+            <h4>Setting</h4>
+            <i class="ri-arrow-drop-right-line"></i>
+          </a>
+        </li> -->
+
+        <li>
+          <a href="login.html" class="pages">
+            <h4>Logout</h4>
+            <i class="ri-arrow-drop-right-line"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- side bar end -->
+
+<!-- header start -->
+<app-c2o-header></app-c2o-header>
+<!-- header end -->
+<app-c2o-search [hidden]="(!router.url.includes('c2oAll'))"></app-c2o-search>
+
+<!-- banner section start -->
+<!-- <section class="banner-wapper">
+  <div class="custom-container">
+    <div class="banner-bg">
+      <img class="img-fluid img-bg w-100" src="assets/fuzzy/images/banner/banner-1.jpg" alt="banner-1" />
+      <div class="banner-content">
+        <h2 class="fw-semibold">Best Selling</h2>
+        <h4>Comforts & Modern life Stylish Sofa</h4>
+      </div>
+      <a href="shop.html" class="more-btn">
+        <h4>View More</h4>
+        <i class="iconsax right-arrow" data-icon="arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section> -->
+<!-- banner section start -->
+<router-outlet></router-outlet>
+
+<!-- <app-c2o-categories [hidden]="(!router.url.includes('c2oAll'))"></app-c2o-categories> -->
+<app-c2o-nav></app-c2o-nav>
