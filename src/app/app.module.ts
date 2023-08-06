@@ -1,4 +1,7 @@
 import { NgModule } from '@angular/core';
+
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '@env/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -44,6 +47,12 @@ import { UiModule } from './components/ui/ui.module';
     TrimLastDirective
   ],
   imports: [
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
     SweetAlert2Module.forRoot(),
     FormsModule,
     NgxPaginationModule,
