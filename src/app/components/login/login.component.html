@@ -1,0 +1,75 @@
+<ngx-ui-loader [pbColor]="'#0A60C2'"  [bgsColor]="'#0A60C2'"[fgsColor]="'#0A60C2'"[text]="'Validando ingreso, por favor espere...'"
+[fgsSize]="15"[fgsType]= "'cube-grid'"[textColor]="'#0A60C2'"[overlayColor]="' rgba(255,255,255,0.8)'" 
+
+
+></ngx-ui-loader>   
+<div class="auth-img">
+    <img class="img-fluid auth-bg" src="assets/fuzzy/images/background/auth_bg.jpg" alt="auth_bg" />
+    <div class="auth-content">
+      <!-- <div>
+        <h2>CLICK 2 ORDER!</h2>
+        <h4 class="p-0">Directo a su puerta</h4> -->
+      </div>
+    </div>
+  
+
+
+  <form class="auth-form" [formGroup]="ngFormLogin" (ngSubmit)="onLogin()">
+    <div class="custom-container">
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email" required [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+          
+            <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+              <div *ngIf="f['email'].errors['required']">El email requerido
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="password" placeholder="*******" formControlName="password" required [ngClass]="{ 'is-invalid': submitted && f['password'].errors}">
+            <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+              <div *ngIf="f['password'].errors['required']">Contraseña requerida
+            </div>
+          </div>
+      <div class="option mt-3">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+          <!-- <label class="form-check-label" for="flexCheckDefault">Remember me</label> -->
+        </div>
+        <!-- <a class="forgot" href="forgot-password.html">Forgot password?</a> -->
+      </div>
+
+      <div [hidden]="!isError">
+        <span style="color:red;">{{message}}</span> 
+      </div>
+      <div class="d-grid gap-2">
+        <!-- <button type="submit" class="btn btn-primary me-2 mb-2 mb-md-0" (click)="onLoggedin($event)">Entrar</button> -->
+        <button type="submit" class="btn btn-primary" style="border-radius: 10px;">Entrar</button>
+      </div>
+    <!--   <div class="division">
+        <span>OR</span>
+      </div>
+
+      <ul class="social-media">
+        <li>
+          <a href="https://www.facebook.com/login/" target="_blank">
+            <img class="img-fluid icons" src="assets/images/svg/facebook.svg" alt="facebook" />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.google.co.in/" target="_blank">
+            <img class="img-fluid icons" src="assets/images/svg/google.svg" alt="facebook" />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.apple.com/in/" target="_blank">
+            <img class="img-fluid icons" src="assets/images/svg/apple.svg" alt="facebook" />
+          </a>
+        </li>
+      </ul> -->
+
+      <!-- <h4 class="signup">Un producto de <a > SOF 506</a></h4> -->
+    </div>
+    </div>
+  </form>

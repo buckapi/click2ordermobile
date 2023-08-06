@@ -1,7 +1,7 @@
 <div class="offcanvas sidebar-offcanvas offcanvas-start" tabindex="-1" id="offcanvasLeft">
   <div class="offcanvas-header">
     <img class="img-fluid profile-pic" src="assets/fuzzy/images/icons/profile.png" alt="profile" />
-    <h4>Hello, Agasya!</h4>
+    <h4>Hola, {{yeoman.user?.username}}!</h4>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
@@ -44,7 +44,7 @@
         </li> -->
 
         <li>
-          <a href="login.html" class="pages">
+          <a (click)="onLogOut()" class="pages" >
             <h4>Logout</h4>
             <i class="ri-arrow-drop-right-line"></i>
           </a>

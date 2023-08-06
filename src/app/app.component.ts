@@ -11,6 +11,8 @@ import { UploaderCaptions } from 'ngx-awesome-uploader';
 import Swal from 'sweetalert2'
 import {CATEGORIES} from '@app/services/categories.service';
 import { Router } from '@angular/router';
+import { AuthRESTService } from './services/authREST.service';
+
 declare const XM_Popup: any;
 
 @Component({
@@ -104,6 +106,12 @@ public getProducts(){
 
   });
 }
+onLogOut(){
+  this.authRESTService.logoutUser().subscribe(response=>{
+   
+  });
+  this.router.navigate(['/login']);
+}
 
   onSubmit() {
 
@@ -133,6 +141,7 @@ public getProducts(){
   title = 'vk';
   adapter = new  DemoFilePickerAdapter(this.http,this._butler);
   constructor(
+    public authRESTService:AuthRESTService,
     private http: HttpClient,
  public router:Router,
    // private formBuilder: FormBuilder,

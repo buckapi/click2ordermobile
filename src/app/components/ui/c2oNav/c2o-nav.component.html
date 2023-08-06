@@ -1,5 +1,5 @@
   <!-- bottom navbar start -->
-  <div class="navbar-menu" [hidden]="router.url.includes('c2oOrders')">
+  <div class="navbar-menu" [hidden]="router.url.includes('c2oOrders')|| router.url.includes('login')">
     <ul>
       <li [ngClass]="{ 'active': router.url.includes('home') }">
         <a routerLink="home">
