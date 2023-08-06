@@ -13,7 +13,7 @@
             </div>
           </div>
         </div>
-        <a href="notification.html" class="notification"  >
+        <a  class="notification"  >
           <i class="iconsax notification-icon" data-icon="bell-2"></i>
         </a>
       </div>
@@ -26,10 +26,25 @@
           <i class="iconsax back-btn" data-icon="arrow-left"></i>
         </a>
         <h3>Historial de ordenes</h3>
-        <a href="notification.html" class="notification"  [hidden]="router.url.includes('c2oOrders')">
+        <a  class="notification"  [hidden]="router.url.includes('c2oOrders')">
           <i class="iconsax notification-icon" data-icon="bell-2"></i>
         </a>
       </div>
       
     </div>
   </header>
+  <header class="section-t-space" [hidden]="( !router.url.includes('detail') )">
+    <div class="custom-container">
+      <div class="header-panel">
+        <a routerLink="c2oAll">
+          <i class="iconsax back-btn" data-icon="arrow-left"></i>
+        </a>
+        <h3>Detalle</h3>
+        <!-- <a  class="notification"  [hidden]="router.url.includes('c2oOrders')">
+          <i class="iconsax notification-icon" data-icon="bell-2"></i>
+        </a> -->
+      </div>
+      
+    </div>
+  </header>
+  

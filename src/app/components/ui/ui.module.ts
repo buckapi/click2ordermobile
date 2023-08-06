@@ -7,7 +7,9 @@ import { C2oNavComponent } from './c2oNav/c2o-nav.component';
 import { RouterModule } from '@angular/router';
 import { Yeoman } from '@app/services/yeoman.service';
 
+import { FormsModule } from '@angular/forms';
 
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { Yeoman } from '@app/services/yeoman.service';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports:[
     C2oHeaderComponent,C2oSearchComponent,C2oCategoriesComponent,C2oNavComponent

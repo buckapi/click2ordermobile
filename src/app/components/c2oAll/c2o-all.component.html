@@ -16,14 +16,14 @@
     <div class="custom-container">
       <div class="title">
         <h2>New Arrivals</h2>
-        <a href="shop.html">View All</a>
+        <a >View All</a>
       </div>
   
       <div class="row g-3">
         <div class="col-6">
           <div class="product-box">
             <div class="product-box-img">
-              <a href="shop.html"><img class="img" src="assets/fuzzy/images/product/1.png" alt="p1" /></a>
+              <a ><img class="img" src="assets/fuzzy/images/product/1.png" alt="p1" /></a>
   
               <div class="cart-box">
                 <a href="cart.html" class="cart-bag">
@@ -61,7 +61,7 @@
         <div class="col-6">
           <div class="product-box">
             <div class="product-box-img">
-              <a href="shop.html">
+              <a >
                 <img class="img" src="assets/fuzzy/images/product/2.png" alt="p2" />
               </a>
   
@@ -106,14 +106,14 @@
   <section class="section-t-space" [hidden]="yeoman.view=='grid'" >
     <div class="custom-container">
       <div class="title">
-        <h2>Trending Furniture</h2>
-        <a href="product-details.html">View All</a>
+        <h2>Vista Lista</h2>
+        <a >Ver todos</a>
       </div>
   
       <div class="row g-3">
-        <div class="col-12"  *ngFor="let product of yeoman.all;let i = index" [hidden]="product.images[0]==undefined">
+        <div class="col-12" (click)="setPreview(i)" *ngFor="let product of yeoman.all;let i = index" [hidden]="product.images[0]==undefined">
           <div class="horizontal-product-box">
-            <a href="product-details.html" class="horizontal-product-img" *ngIf="product.images[0]!==undefined">
+            <a  class="horizontal-product-img" *ngIf="product.images[0]!==undefined">
               <img class="img-fluid img" src="{{product.images[0]}}" alt="p3" />
             </a>
             <div class="horizontal-product-details">
@@ -129,12 +129,12 @@
   
               <div class="d-flex align-items-center justify-content-between mt-1">
                 <div class="d-flex align-items-center gap-2">
-                  <h3 class="fw-semibold">${{product.price}}</h3>
-                  <h6 class="save">Save $10</h6>
+                  <h3 class="fw-semibold">${{product.price | number:'1.2-2' }}</h3>
+                  <!-- <h6 class="save">Save $10</h6> -->
                 </div>
-                <a  class="cart-bag">
-                  <i class="iconsax bag" data-icon="basket-2"></i>
-                </a>
+                <!-- <a  class="cart-bag">
+                  <i class="iconsax bag" data-icon="basket"></i>
+                </a> -->
               </div>
             </div>
           </div>
@@ -154,7 +154,7 @@
           <h2 class="fw-semibold">Best Selling</h2>
           <h4>Comforts & Modern life Stylish Sofa</h4>
         </div>
-        <a href="shop.html" class="more-btn">
+        <a  class="more-btn">
           <h4>View More</h4>
           <i class="iconsax right-arrow" data-icon="arrow-right"></i>
         </a>
@@ -168,14 +168,14 @@
     <div class="custom-container">
       <div class="title">
         <h2>Offer Zone</h2>
-        <a href="product-details.html">View All</a>
+        <a >View All</a>
       </div>
   
       <div class="swiper offer">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div class="horizontal-product-box">
-              <a href="product-details.html" class="horizontal-product-img">
+              <a  class="horizontal-product-img">
                 <img class="img-fluid img" src="assets/fuzzy/images/product/6.png" alt="p6" />
               </a>
               <div class="horizontal-product-details">
@@ -206,7 +206,7 @@
               </div>
             </div>
             <div class="horizontal-product-box mt-3">
-              <a href="product-details.html" class="horizontal-product-img">
+              <a  class="horizontal-product-img">
                 <img class="img-fluid img" src="assets/fuzzy/images/product/7.png" alt="p7" />
               </a>
               <div class="horizontal-product-details">
@@ -239,7 +239,7 @@
           </div>
           <div class="swiper-slide">
             <div class="horizontal-product-box">
-              <a href="product-details.html" class="horizontal-product-img">
+              <a  class="horizontal-product-img">
                 <img class="img-fluid img" src="assets/fuzzy/images/product/8.png" alt="p8" />
               </a>
               <div class="horizontal-product-details">
@@ -270,7 +270,7 @@
               </div>
             </div>
             <div class="horizontal-product-box mt-3">
-              <a href="product-details.html" class="horizontal-product-img">
+              <a  class="horizontal-product-img">
                 <img class="img-fluid img" src="assets/fuzzy/images/product/9.png" alt="p9" />
               </a>
               <div class="horizontal-product-details">
@@ -311,21 +311,21 @@
   <section class="section-t-space" [hidden]="yeoman.view=='list'">
     <div class="custom-container">
       <div class="title">
-        <h2>Furniture And Decor</h2>
-        <a href="shop.html">View All</a>
+        <h2>Vista grid</h2>
+        <a >Ver todos</a>
       </div>
   
       <div class="row g-4">
-        <div class="col-6" *ngFor="let product of yeoman.all;let i = index" [hidden]="product.images[0]==undefined">
+        <div class="col-6" (click)="setPreview(i)" *ngFor="let product of yeoman.all;let i = index" [hidden]="product.images[0]==undefined">
           <div class="product-box">
             <div class="product-box-img">
-              <a href="shop.html"> <img class="img" src="{{product.images[0]}}" alt="p10" /></a>
+              <a > <img class="img" src="{{product.images[0]}}" alt="p10" /></a>
   
-              <div class="cart-box">
+              <!-- <div class="cart-box">
                 <a href="cart.html" class="cart-bag">
                   <i class="iconsax bag" data-icon="basket-2"></i>
                 </a>
-              </div>
+              </div> -->
             </div>
             <div class="like-btn animate active inactive">
               <img class="outline-icon" src="assets/fuzzy/images/svg/like.svg" alt="like" />
@@ -342,8 +342,8 @@
             <div class="product-box-detail">
               <h4>{{product.name}}</h4>
               <div class="d-flex justify-content-between gap-3">
-                <h5>Modern Swing Chair</h5>
-                <h3 class="fw-semibold">${{product.price}}</h3>
+                <h5>Precio</h5>
+                <h3 class="fw-semibold">${{product.price | number:'1.2-2' }}</h3>
               </div>
             </div>
           </div>
@@ -352,7 +352,7 @@
         <!-- <div class="col-6">
           <div class="product-box">
             <div class="product-box-img">
-              <a href="shop.html"> <img class="img" src="assets/fuzzy/images/product/11.png" alt="p11" /></a>
+              <a > <img class="img" src="assets/fuzzy/images/product/11.png" alt="p11" /></a>
   
               <div class="cart-box">
                 <a href="cart.html" class="cart-bag">
@@ -384,7 +384,7 @@
         <div class="col-6">
           <div class="product-box">
             <div class="product-box-img">
-              <a href="shop.html"> <img class="img" src="assets/fuzzy/images/product/12.png" alt="p12" /></a>
+              <a > <img class="img" src="assets/fuzzy/images/product/12.png" alt="p12" /></a>
   
               <div class="cart-box">
                 <a href="cart.html" class="cart-bag">
@@ -417,7 +417,7 @@
         <div class="col-6">
           <div class="product-box">
             <div class="product-box-img">
-              <a href="shop.html"> <img class="img" src="assets/fuzzy/images/product/13.png" alt="p13" /></a>
+              <a > <img class="img" src="assets/fuzzy/images/product/13.png" alt="p13" /></a>
   
               <div class="cart-box">
                 <a href="cart.html" class="cart-bag">
@@ -460,7 +460,7 @@
             <div class="banner-content">
               <h3>Wingback Chair</h3>
             </div>
-            <a href="shop.html" class="more-btn d-block">
+            <a  class="more-btn d-block">
               <i class="iconsax right-arrow" data-icon="arrow-right"></i>
               <h3>View More</h3>
             </a>
@@ -474,7 +474,7 @@
             <div class="banner-content">
               <h3>Wingback Chair</h3>
             </div>
-            <a href="shop.html" class="more-btn d-block">
+            <a  class="more-btn d-block">
               <i class="iconsax right-arrow" data-icon="arrow-right"></i>
               <h3>View More</h3>
             </a>

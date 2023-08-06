@@ -1,11 +1,11 @@
 
 <!-- search section starts -->
-<section>
+<section [hidden]="router.url.includes('apidocs')">
     <div class="custom-container">
       <form class="theme-form search-head" target="_blank">
         <div class="form-group">
           <div class="form-input">
-            <input type="text" class="form-control search" id="inputusername" placeholder="Search here..." />
+            <input type="text" class="form-control search" id="inputusername" placeholder="Buscar producto." />
             <i class="iconsax search-icon" data-icon="search-normal-2"></i>
           </div>
   
@@ -28,3 +28,23 @@
     </div>
   </section>
   <!-- search section end -->
+
+<!-- search section starts -->
+<section [hidden]="!router.url.includes('apidocs')">
+  <div class="custom-container">
+    <form class="theme-form search-head" target="_blank">
+      <div class="form-group">
+        <div class="form-input">
+          <input type="text" class="form-control" [(ngModel)]="_butler.searchTerm" placeholder="CODIGO..."   (keyup)="onSearch2()"  [ngModelOptions]="{ standalone: true }">
+          
+          <!-- <input type="text" class="form-control search" id="inputusername" placeholder="Buscar por codigo..." /> -->
+          <i class="iconsax search-icon" data-icon="search-normal-2"></i>
+        </div>
+
+        <!-- <a href="landing.html#search-filter" class="btn filter-btn mt-0" data-bs-toggle="modal"> -->
+     
+      </div>
+    </form>
+  </div>
+</section>
+<!-- search section end -->

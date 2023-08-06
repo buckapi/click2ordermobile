@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Butler } from '@app/services/butler.service';
 import { DataApiService } from '@app/services/data-api.service';
 import { Yeoman } from '@app/services/yeoman.service';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
@@ -14,7 +15,8 @@ export class C2oAllComponent implements OnInit {
     private ngxService: NgxUiLoaderService,
     public router:Router,    
         public dataApiService:DataApiService,
-         public yeoman:Yeoman
+         public yeoman:Yeoman,
+         public _butler:Butler
 
   ) { 
     this.getAll();
@@ -28,7 +30,7 @@ export class C2oAllComponent implements OnInit {
   }
   setPreview(i:any){
     this.yeoman.preview=this.yeoman.all[i];
-    this.router.navigate(['c2oDetail']);
+    this.router.navigate(['detail']);
   }
     ngOnInit(): void {
     }

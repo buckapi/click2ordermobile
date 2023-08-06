@@ -12,7 +12,9 @@ const routes: Routes = [
   
 { path: 'apidocs', loadChildren: () => import('./components/apidocs/apidocs.module').then(m => m.ApidocsModule) },
   
-{ path: 'login', loadChildren: () => import('./components/login/login.module').then(m => m.LoginModule) }];
+{ path: 'login', loadChildren: () => import('./components/login/login.module').then(m => m.LoginModule) },
+  
+{ path: 'detail', loadChildren: () => import('./components/detail/detail.module').then(m => m.DetailModule) }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

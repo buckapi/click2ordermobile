@@ -208,7 +208,12 @@ export class DataApiService {
 		.pipe(map(data => data));
 	}
 
+	search(searchTerm: any): Observable<any> {
+		// const url = `${this.baseUrl}/getall?familia=%5Bobject+Object%5D`;
+		const url_api = this.url + `/getall?familia=%5Bobject+Object%5D/?filter[where][name][regex]=${searchTerm}`;
 
+		return this.http.get(url_api);
+	  }
 	saveCard(card :CardInterface){
 		const url_api=	this.yeoman.origin.restUrl+'/api/cards';
 		return this.http

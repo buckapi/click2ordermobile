@@ -58,7 +58,7 @@
 <!-- header start -->
 <app-c2o-header></app-c2o-header>
 <!-- header end -->
-<app-c2o-search [hidden]="(!router.url.includes('c2oAll'))"></app-c2o-search>
+<app-c2o-search [hidden]="(!router.url.includes('c2oAll') && !router.url.includes('apidocs'))"></app-c2o-search>
 
 <!-- banner section start -->
 <!-- <section class="banner-wapper">
@@ -81,3 +81,14 @@
 
 <!-- <app-c2o-categories [hidden]="(!router.url.includes('c2oAll'))"></app-c2o-categories> -->
 <app-c2o-nav></app-c2o-nav>
+<section class="fixed-cart-btn section-b-space" [hidden]="(!router.url.includes('detail'))">
+  <div class="custom-container">
+    <a  class="cart-box-sec">
+      <div class="d-flex align-items-center gap-2">
+        <i class="iconsax bag" data-icon="basket-2"></i>
+        <h2>Agregar a orden</h2>
+      </div>
+      <h2>${{yeoman.preview.price}}</h2>
+    </a>
+  </div>
+</section>

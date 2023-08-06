@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Butler } from '@app/services/butler.service';
 import { ExistenciaService } from '@app/services/existencia-service.service';
 import { Yeoman } from '@app/services/yeoman.service';
 import{NgxUiLoaderService} from 'ngx-ui-loader';
+
 @Component({
   selector: 'app-apidocs',
   templateUrl: './apidocs.component.html',
@@ -12,13 +14,17 @@ export class ApidocsComponent implements OnInit {
   p: number = 1;
   page: number = 1;
   count: number = 0;
-  itemsPP:number=30;
+  itemsPP:number=0;
   options: number[] = [30, 50, 100];
   tableSize: number = 7;
   tableSizes: any = [3, 6, 9, 12];
 
-  constructor(public yeoman:Yeoman,public existenciaService:ExistenciaService,
-    private ngxService: NgxUiLoaderService ) {
+  constructor
+  (public yeoman:Yeoman,
+    public existenciaService:ExistenciaService,
+    private ngxService: NgxUiLoaderService,
+    public _butler:Butler
+    ) {
   this.obtenerExistencias(); 
   }
   changeItemsPerPage(value: number): void {
@@ -27,7 +33,7 @@ export class ApidocsComponent implements OnInit {
   obtenerExistencias() {
     const familia = "%5Bobject+Object%5D";
     this.ngxService.start("loader-01");
-    this.existenciaService.getAllExistencias(familia).subscribe(
+    this.existenciaService.getAllExistencias().subscribe(
       (data) => {
         this.existencias = data;
       

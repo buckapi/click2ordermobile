@@ -93,6 +93,9 @@ export class Butler {
     userId:string=""; 
     userType:string=""; 
     email:string=""; 
+    searchTerm:string="";
+
+    nameFiltering:boolean=false;
     cards:any[]=[]; 
     orders:any[]=[]; 
     serialT:number=0;
