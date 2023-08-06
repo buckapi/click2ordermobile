@@ -1,8 +1,8 @@
 {
     "name": "Click2Order",
     "short_name": "Click2Order",
-    "theme_color": "#0A60C2",
-    "background_color": "#0A60C2",
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
     "display": "standalone",
     "scope": "./",
     "start_url": "./",
