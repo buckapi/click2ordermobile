@@ -1,3 +1,15 @@
+<ngx-ui-loader 
+  [pbColor]="'#0A60C2'"  
+  [bgsColor]="'#0A60C2'"
+  [fgsColor]="'#0A60C2'"
+  [text]="'Cargando...'"
+  [fgsSize]="15"
+  [fgsType]= "'cube-grid'"
+  [textColor]="'#0A60C2'"
+  [overlayColor]="' rgba(255,255,255,0.8)'">
+</ngx-ui-loader>
+
+
 
 <!-- New Arrivals section start -->
 <!-- <section class="section-t-space">
@@ -91,7 +103,7 @@
   <!-- New Arrivals section end -->
   
   <!-- Trending Furniture section start -->
-  <section class="section-t-space" [hidden]="yeoman.view=='grid'">
+  <section class="section-t-space" [hidden]="yeoman.view=='grid'" >
     <div class="custom-container">
       <div class="title">
         <h2>Trending Furniture</h2>
@@ -101,7 +113,7 @@
       <div class="row g-3">
         <div class="col-12"  *ngFor="let product of yeoman.all;let i = index" [hidden]="product.images[0]==undefined">
           <div class="horizontal-product-box">
-            <a href="product-details.html" class="horizontal-product-img">
+            <a href="product-details.html" class="horizontal-product-img" *ngIf="product.images[0]!==undefined">
               <img class="img-fluid img" src="{{product.images[0]}}" alt="p3" />
             </a>
             <div class="horizontal-product-details">

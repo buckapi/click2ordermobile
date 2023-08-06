@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Yeoman } from '@app/services/yeoman.service';
 
 @Component({
   selector: 'app-c2o-nav',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class C2oNavComponent implements OnInit {
 
-  constructor(public router:Router) { }
+  constructor(public router:Router,public yeoman:Yeoman) { }
 
   ngOnInit(): void {
   }

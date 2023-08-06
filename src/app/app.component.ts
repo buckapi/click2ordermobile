@@ -173,5 +173,8 @@ public getProducts(){
       prevEl: '.swiper-button-prev'
     },
   };  
+  connectFlag(){
+    this.yeoman.apiConnected=!this.yeoman.apiConnected;
+  }
   ngAfterViewInit(): void {}
 }
