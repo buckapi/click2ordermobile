@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { SwiperOptions } from 'swiper';
 import { ScriptService } from '@app/services/script.service';
 import { ScriptStore } from '@app/services/script.store';
+import { AuthRESTService } from '@app/services/authREST.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -10,9 +12,12 @@ import { ScriptStore } from '@app/services/script.store';
 export class HomeComponent implements OnInit {
 
   constructor(
-
+    public authRESTService:AuthRESTService,
+    public router:Router,
     public script:ScriptService
   ) { 
+
+    if(!this.authRESTService.getCurrentUser() ){this.router.navigate(['/login'])}
     this.script.load(
   
       'bundle'
